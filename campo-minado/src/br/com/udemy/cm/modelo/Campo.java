@@ -71,4 +71,8 @@ public class Campo {
 		return false;
 	}
 	
+	public boolean isMarcado() {
+		return marcado;
+	}
+	
 }
