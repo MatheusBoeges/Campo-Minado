@@ -3,6 +3,8 @@ package br.com.udemy.cm.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.udemy.cm.excecao.ExplosaoException;
+
 public class Campo {
 	
 	private final int linha;
@@ -38,11 +40,16 @@ public class Campo {
 			return false;
 		}
 		
-		void alternarMarcacao() {
-			if(!aberto) {
-				marcado = !marcado;
-			}
-		}
 	}
 
+	void alternarMarcacao() {
+		if(!aberto) {
+			marcado = !marcado;
+		}
+	}
+	
+	boolean vizinhaSegura() {
+		return vizinhos.stream().noneMatch(v -> v.minado);
+	}
+	
 }
