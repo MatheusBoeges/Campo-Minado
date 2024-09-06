@@ -48,8 +48,27 @@ public class Campo {
 		}
 	}
 	
-	boolean vizinhaSegura() {
+	boolean vizinhacaSegura() {
 		return vizinhos.stream().noneMatch(v -> v.minado);
+	}
+	
+	boolean abrir() {
+		
+		if(!aberto && !marcado) {
+			aberto = true;
+		}
+		
+		if(minado) {
+			throw new ExplosaoException();
+		}
+		
+		if(vizinhacaSegura()) {
+			vizinhos.forEach(v -> v.abrir());
+		}
+		
+		return true;
+	} else {
+		return false;
 	}
 	
 }
