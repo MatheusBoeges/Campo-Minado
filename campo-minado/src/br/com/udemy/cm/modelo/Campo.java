@@ -56,11 +56,10 @@ public class Campo {
 		
 		if(!aberto && !marcado) {
 			aberto = true;
-		}
 		
-		if(minado) {
-			throw new ExplosaoException();
-		}
+			if(minado) {
+				throw new ExplosaoException();
+			}
 		
 		if(vizinhacaSegura()) {
 			vizinhos.forEach(v -> v.abrir());
@@ -70,9 +69,21 @@ public class Campo {
 	} else {
 		return false;
 	}
+}
 	
 	public boolean isMarcado() {
 		return marcado;
+	}
+	
+	public boolean isAberto() {
+		return aberto;
+	}
+	
+	public boolean isFechado() {
+		return !isAberto();
+	}
+	void minar() {
+		minado = true;
 	}
 	
 }
