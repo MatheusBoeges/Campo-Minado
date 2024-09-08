@@ -113,13 +113,13 @@ public class Campo {
 	public String toString() {
 		if(marcado) {
 			return "x";
-		} else if(aberto && minado) {
+		} else if(aberto && minado) { // campo aberto e minado.
 			return "*";
-		} else if(aberto && minasNaVizinhaca() > 0) {
+		} else if(aberto && minasNaVizinhaca() > 0) { //  campo  estiver aberto e tiver minas na vizinhança, mostrar a quantidade de minas na vizinhaças. 
 			return Long.toString(minasNaVizinhaca());
-		} else if(aberto) {
+		} else if(aberto) { //  campo  estiver aberto e não tiver minas na vizinhança.
 			return " ";
-		} else {
+		} else { // campo ainda está fechado.
 			return "?";
 		}
 	}
