@@ -2,6 +2,7 @@ package br.com.udemy.cm.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Tabuleiro {
 	
@@ -36,5 +37,14 @@ public class Tabuleiro {
 			}
 		}
 	}
-
+	
+	private void sortearMinas() {
+		long minasArmadas = 0;
+		Predicate<Campo> minado = c -> c.isMinado();
+		
+		do {
+			minasArmadas = campos.stream().filter(minado).count();
+		} while (minasArmadas < minas);
+	}
+	
 }
