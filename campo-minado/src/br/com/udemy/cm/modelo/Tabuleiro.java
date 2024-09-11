@@ -28,5 +28,13 @@ public class Tabuleiro {
 			}
 		}
 	}
-		
+	
+	private void associarVizinhos() {
+		for(Campo c1: campos) {
+			for(Campo c2: campos) {
+				c1.adcicionarVizinho(c2);
+			}
+		}
+	}
+
 }
