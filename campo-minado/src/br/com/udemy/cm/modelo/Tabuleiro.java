@@ -21,4 +21,12 @@ public class Tabuleiro {
 		sortearMinas();
 	}
 
+	private void gerarCampos() {
+		for (int linha = 0; linha < linhas; linha++) {
+			for (int coluna = 0; coluna < colunas; coluna++) {
+				campos.add(new Campo(linha, coluna));
+			}
+		}
+	}
+		
 }
