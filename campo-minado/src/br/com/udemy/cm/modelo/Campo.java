@@ -82,10 +82,15 @@ public class Campo {
 	public boolean isFechado() {
 		return !isAberto();
 	}
+	
 	void minar() {
 		minado = true;
 	}
 
+	public boolean isMinado() {
+		return minado;
+	}
+	
 	public int getLinha() {
 		return linha;
 	}
