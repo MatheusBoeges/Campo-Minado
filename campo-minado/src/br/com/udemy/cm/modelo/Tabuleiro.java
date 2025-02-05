@@ -10,7 +10,35 @@ public class Tabuleiro {
 	private int colunas;
 	private int minas;
 	
+	public int getLinhas() {
+		return linhas;
+	}
+
+	public void setLinhas(int linhas) {
+		this.linhas = linhas;
+	}
+
+	public int getColunas() {
+		return colunas;
+	}
+
+	public void setColunas(int colunas) {
+		this.colunas = colunas;
+	}
+
+	public int getMinas() {
+		return minas;
+	}
+
+	public void setMinas(int minas) {
+		this.minas = minas;
+	}
+
 	private final List<Campo> campos = new ArrayList<>();
+	
+	public List<Campo> getCampos() {
+		return campos;
+	}
 
 	public Tabuleiro(int linhas, int colunas, int minas) {
 		this.linhas = linhas;
