@@ -16,6 +16,14 @@ public class Campo {
 
 	private List<Campo> vizinhos = new ArrayList<>();
 	
+	public List<Campo> getVizinhos() {
+		return vizinhos;
+	}
+
+	public void setVizinhos(List<Campo> vizinhos) {
+		this.vizinhos = vizinhos;
+	}
+
 	Campo(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
